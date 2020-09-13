@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    {{ message }}
+
+    <a v-bind:href="google_obj.link" v-bind:title="google_obj.title">Google</a>
+
+    <button v-if="user.type === 'User' ">Login</button>
+    <button v-else-if="user.type === 'Admin' ">Administrar</button>
+    <button v-else>Moderar</button>
+
+    <div class="to-do">
+        <ul>
+            <li v-for="todo in todolist">{{todo}}</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+            el: '#app',
+            data: {
+                message: "Hell Vue"+" Neemias Buceli",
+                google_obj: {
+                    link: "https://www.google.com.br",
+                    title: "Google"
+                },
+                user: {
+                    type: "Admin",
+                    name: "Neemias Buceli"
+                },
+                todolist: ['estudar vue js', 'comer verduras', 'fazer exercicios']
+            }
+        })
+</script>

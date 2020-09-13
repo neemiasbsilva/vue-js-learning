@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    {{message}}
+    <button v-on:click="inverterNome()">Inverter nome</button>
+</div>
+
+<script>
+    var app = new Vue({
+        el:"#app",
+        data: {
+            message: "Neemias"
+        },
+        methods: {
+            inverterNome(){
+                // console.log(this.message.split(''))
+                // if (this.message === "Neemias"){
+
+                    this.message = this.message.split('').reverse().join('')
+
+                // }
+                // else {
+                    // this.message = this.message
+                // }
+
+            }
+        }
+
+    })
+</script>
